@@ -1625,6 +1625,15 @@ Subscribe
   backface-visibility: hidden;
 }
 
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.0;
+  }
+}
+
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -1635,10 +1644,11 @@ Subscribe
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-
+  animation: blink 3s infinite 3s;
 }
 
 .container:hover .image {
+  animation: none; /* Stop the blinking animation on hover */
   opacity: 0.3;
 }
 
@@ -1649,6 +1659,7 @@ Subscribe
 .man-image:hover #instagram-icon {
   opacity: 1;
 }
+
 
 
 /* 
